@@ -1,0 +1,26 @@
+class FIFOAccounting:
+    """FIFO cost basis with fee-aware profit calculation"""
+    
+    def __init__(self, firestore_client):
+        self.db = firestore_client
+        
+    def calculate_realized_pnl(self, sell_order):
+        # Get all unfilled buy lots
+        buy_lots = self._get_open_positions(sell_order['symbol'])
+        
+        total_cost = 0
+        total_qty = 0
+        
+        for lot in buy_lots:
+            if total_qty >= sell_order['filled']:
+                break
+            qty_to_use = min(lot['remaining_qty'], 
+                           sell_order['filled'] - total_qty)
+            total_cost += lot['price'] * qty_to_use
+            total_qty += qty_to_use
+            
+        # Include fees in cost basis
+        total_cost += sell_order['fee']
+        
+        realized_pnl = (sell_order['filled'] * sell_order['price']) - total_cost
+        return round(realized_pnl, 8)
