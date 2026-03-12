@@ -1,0 +1,17 @@
+1. **Setup Phase (Manual)**
+   - Create Firebase project + Firestore
+   - Create Binance testnet account
+   - Create Telegram bot
+   - Set up GCP project with Cloud Functions
+
+2. **Development Phase**
+   - Deploy functions in test mode
+   - Run simulation with testnet
+   - Validate error handling
+   - Test profit detection
+
+3. **Production Phase**
+   - Switch to Binance mainnet
+   - Enable real withdrawals
+   - Set up alerting
+   - Document operational procedures
