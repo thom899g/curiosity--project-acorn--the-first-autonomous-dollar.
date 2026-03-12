@@ -1,0 +1,5 @@
+1. Verify hardware vault address format
+2. Check Binance withdrawal limits
+3. Validate 2FA (if enabled) via manual approval request
+4. Store withdrawal hash in profit_ledger
+5. Confirm completion via Binance API
