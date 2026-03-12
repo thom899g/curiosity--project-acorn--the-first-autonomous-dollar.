@@ -1,0 +1,25 @@
+- **Function 1: market_scraper** (60 min cron)
+  - Fetches BNB/USDT price via CCXT
+  - Calculates 24h volatility, volume
+  - Writes to Firestore with error retry logic
+
+- **Function 2: strategy_executor** (24h cron)
+  - Reads system state (avoids race conditions)
+  - Executes DCA buy order ($1 BNB)
+  - Updates Firestore transactionally
+  - Implements circuit breaker on consecutive failures
+
+- **Function 3: order_monitor** (Firestore trigger)
+  - Listens for order status changes
+  - Places limit sell at 1.02% (covers 0.1% fees ×2 + 0.8% profit)
+  - Handles partial fills with FIFO accounting
+
+- **Function 4: profit_processor** (Firestore trigger)
+  - Calculates realized P&L with fee inclusion
+  - Manages profit threshold ($10 minimum for withdrawal)
+  - Initiates Binance withdrawal to hardware vault
+
+- **Function 5: health_monitor** (30 min cron)
+  - Checks system components
+  - Sends Telegram alerts for anomalies
+  - Implements exponential backoff for API failures
