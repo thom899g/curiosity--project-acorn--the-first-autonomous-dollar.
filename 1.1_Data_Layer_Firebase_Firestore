@@ -1,0 +1,7 @@
+- **Collections:**
+  - `market_data/{timestamp}`: OHLCV data + liquidity metrics
+  - `orders/{order_id}`: Order lifecycle (PENDING → FILLED → SETTLED)
+  - `positions/{position_id}`: Open/closed positions with cost basis
+  - `system_state/global`: Atomic state machine position
+  - `profit_ledger/{tx_hash}`: Immutable profit records
+  - `error_queue/{error_id}`: Dead letter queue for failed operations
