@@ -1,0 +1,3 @@
+- All Firestore writes use transactions
+- Order IDs are UUID4 with timestamp prefixes
+- Atomic profit calculation with optimistic concurrency
