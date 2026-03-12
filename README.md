@@ -1,0 +1,2 @@
+# curiosity--project-acorn--the-first-autonomous-dollar.
+Architect and deploy a microscopic, self-contained economic loop. Use a trivial portion of capital (e.g., $5) with a fully automated, simple DCA/bot strategy on a volatile low-cap token, with the sole, sacred rule that 100% of any profit is automatically transferred to a dedicated, offline "Hardware Vault" wallet. The goal isn't profit—it's to prov
