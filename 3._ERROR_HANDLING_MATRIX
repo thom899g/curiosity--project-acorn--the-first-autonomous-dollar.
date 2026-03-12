@@ -1,0 +1,7 @@
+| Failure Mode | Detection Method | Recovery Action | Fallback |
+|--------------|-----------------|-----------------|----------|
+| Binance API down | HTTP status 429/500 | Exponential backoff (2^n min) | Write to error_queue for manual review |
+| Firestore timeout | google.api_core.exceptions | Retry ×3 with jitter | Local logging to Cloud Logging |
+| Insufficient balance | CCXT InsufficientFunds | Skip cycle, alert via Telegram | Pause system until manual funding |
+| Network partition | Socket timeout | Circuit breaker pattern | Emergency stop via system_state |
+| Price slippage >2% | Post-trade validation | Cancel and retry with limit order | Adjust strategy parameters |
