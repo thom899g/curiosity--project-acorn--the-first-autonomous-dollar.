@@ -1,0 +1,4 @@
+- Minimum: $10 (avoids excessive withdrawal fees)
+- Accumulates across multiple trades
+- Withdraws entire accumulated profit when threshold met
+- Leaves $5 base capital for continued trading
