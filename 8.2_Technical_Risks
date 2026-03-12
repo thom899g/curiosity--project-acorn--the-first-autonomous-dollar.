@@ -1,0 +1,6 @@
+- Daily backup of Firestore to Cloud Storage
+- Function timeout: 540 seconds (9 minutes)
+- Memory: 512MB per function
+- Concurrency: 1 instance to avoid race conditions
+
+## SUCCESS CRITERIA
