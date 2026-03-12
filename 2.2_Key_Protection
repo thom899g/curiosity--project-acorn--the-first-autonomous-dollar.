@@ -1,0 +1,3 @@
+- Binance API keys: Stored in Secret Manager
+- Firebase credentials: Auto-injected by Cloud Functions
+- Telegram tokens: Secret Manager + environment validation
