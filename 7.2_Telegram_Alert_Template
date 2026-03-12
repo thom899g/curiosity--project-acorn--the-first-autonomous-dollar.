@@ -1,0 +1,6 @@
+🚨 PROJECT ACORN ALERT
+Time: {timestamp}
+Event: {event_type}
+Status: {status}
+Details: {details}
+Action Required: {yes/no}
